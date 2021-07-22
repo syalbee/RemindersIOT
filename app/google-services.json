@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "967431832883",
+    "project_id": "reminderiot",
+    "storage_bucket": "reminderiot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:967431832883:android:9cb17059adb09e58bcea46",
+        "android_client_info": {
+          "package_name": "com.example.remindersiot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "967431832883-qj31hvbinia3r7vsigc1hsm16oo3mi6s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6zlm9r-0IYmP6dBSSmF8-P_86PY232y4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "967431832883-qj31hvbinia3r7vsigc1hsm16oo3mi6s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
