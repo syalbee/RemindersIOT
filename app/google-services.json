@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "967431832883",
-    "project_id": "reminderiot",
-    "storage_bucket": "reminderiot.appspot.com"
+    "project_number": "246664501088",
+    "firebase_url": "https://remindersiot-default-rtdb.firebaseio.com",
+    "project_id": "remindersiot",
+    "storage_bucket": "remindersiot.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:967431832883:android:9cb17059adb09e58bcea46",
+        "mobilesdk_app_id": "1:246664501088:android:0e597bcc265cc21255f005",
         "android_client_info": {
           "package_name": "com.example.remindersiot"
         }
       },
       "oauth_client": [
         {
-          "client_id": "967431832883-qj31hvbinia3r7vsigc1hsm16oo3mi6s.apps.googleusercontent.com",
+          "client_id": "246664501088-6u8tops5seuh1vskvu3a6pct55ta1ona.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC6zlm9r-0IYmP6dBSSmF8-P_86PY232y4"
+          "current_key": "AIzaSyAKWx9QeYit_-U1MEbZcEgp8SVKvpJAwZc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "967431832883-qj31hvbinia3r7vsigc1hsm16oo3mi6s.apps.googleusercontent.com",
+              "client_id": "246664501088-6u8tops5seuh1vskvu3a6pct55ta1ona.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
