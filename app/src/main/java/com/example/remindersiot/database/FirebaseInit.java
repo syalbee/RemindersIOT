@@ -15,14 +15,13 @@ public class FirebaseInit {
 
     public DatabaseReference users;
     public DatabaseReference mDatabaseRef;
-    public DatabaseReference pushTask;
+    public DatabaseReference getKey;
 
     public FirebaseInit(){
         mAuth       = FirebaseAuth.getInstance();
         user        = mAuth.getCurrentUser();
         database    = FirebaseDatabase.getInstance();
 
-        pushTask = database.getReference("User").child(mAuth.getUid()).child("Task").push();
         users       = database.getReference("Users");
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("User");
     }

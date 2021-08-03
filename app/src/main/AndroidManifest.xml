@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RemindersIOT">
-        <activity android:name=".views.AddCourse"></activity>
+        <activity android:name=".views.Settings"></activity>
+        <activity android:name=".views.DetailDone" />
+        <activity android:name=".views.Detail" />
+        <activity android:name=".views.Done" />
+        <activity android:name=".views.AddCourse" />
         <activity android:name=".views.AddReminder" />
         <activity android:name=".views.Active" />
         <activity android:name=".views.Home" />

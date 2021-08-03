@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/greenSecodary"
-    tools:context=".views.Active">
-
+    tools:context=".views.Done">
 
     <ImageButton
-        android:id="@+id/Ibtbackactive"
+        android:id="@+id/Ibtbackdone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -24,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Active task"
+        android:text="Done task"
         android:textColor="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
@@ -33,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvActive"
+        android:id="@+id/rvDone"
         android:layout_width="match_parent"
         android:layout_height="600dp"
         app:layout_constraintBottom_toBottomOf="parent"

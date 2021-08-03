@@ -68,6 +68,7 @@ public class Signup extends AppCompatActivity {
                         if (task.isSuccessful()){
                             fb.database.getReference("User").child(fb.mAuth.getCurrentUser().getUid()).child("Akun").setValue(user);
                             fb.database.getReference("User").child(fb.mAuth.getCurrentUser().getUid()).child("Course").child("0").setValue("Course List");
+                            fb.database.getReference("User").child(fb.mAuth.getCurrentUser().getUid()).child("Device").child("status").setValue("disconnected");
                             startActivity(new Intent(Signup.this, Home.class));
                             finish();
                             Toast.makeText(Signup.this, "Authentication Succes", Toast.LENGTH_LONG).show();

@@ -2,50 +2,50 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="100dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
     app:cardCornerRadius="8dp"
-    android:layout_margin="16dp">
+    android:layout_margin="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/ivWarnaHome"
+            android:id="@+id/viewWarna"
             android:layout_width="20dp"
-            android:layout_height="150dp"
+            android:layout_height="match_parent"
+            android:background="@color/greenPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/button_green" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvNCourse"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Teknik Kompilasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:text="Aplikasi Komnputasi Bergerak"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toEndOf="@+id/ivWarnaHome"
+            app:layout_constraintStart_toEndOf="@+id/viewWarna"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvNStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="Start : 09-12-2021"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:paddingTop="3dp"
+            android:text="Start : 00-00-0000"
             android:textColor="@color/greenPrimary"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNCourse" />
 
@@ -54,14 +54,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="5dp"
-            android:paddingTop="10dp"
-            android:text="Due : 19-12-2021"
+            android:layout_marginTop="2dp"
+            android:paddingTop="5dp"
+            android:text="Due : 00-00-0000"
             android:textColor="@color/red"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNStart" />
+
+        <TextView
+            android:id="@+id/tvNTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tugas Besar"
+            android:textColor="@color/yellow"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

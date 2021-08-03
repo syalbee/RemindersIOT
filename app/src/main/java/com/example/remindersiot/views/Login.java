@@ -43,7 +43,6 @@ public class Login extends AppCompatActivity {
 
     //fungsi signin untuk mengkonfirmasi data pengguna yang sudah mendaftar sebelumnya
     private void logIn() {
-
         String email = etEmail.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
 
@@ -55,7 +54,6 @@ public class Login extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             startActivity(new Intent(Login.this, Home.class));
                             finish();
-
                         } else {
                             Toast.makeText(Login.this, "Sign In Failed",
                                     Toast.LENGTH_SHORT).show();
