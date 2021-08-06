@@ -7,6 +7,7 @@ public class TaskModel {
     public String due;
     public String note;
     public String idKey;
+    public String idUrut;
 
     public String getTitle() {
         return title;
@@ -30,5 +31,8 @@ public class TaskModel {
 
     public String getIdKey() {
         return idKey;
+    }
+    public String getIdUrut() {
+        return idUrut;
     }
 }

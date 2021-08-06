@@ -164,7 +164,7 @@ public class AddReminder extends AppCompatActivity {
 
         } else {
 
-            Tasks tks = new Tasks(title, course, start, due, note, idKey);
+            Tasks tks = new Tasks(title, course, start, due, note, idKey, String.valueOf(Iterasisekian));
             fb.database.getReference("User").child(uid).child("Task").child(idKey).setValue(tks);
             fb.database.getReference("User").child(uid).child("TaskDevice").child(String.valueOf(Iterasisekian)).setValue(tks);
             fb.database.getReference("User").child(uid).child("TaskDevice").child("jumlahIterasi").setValue(Iterasisekian);

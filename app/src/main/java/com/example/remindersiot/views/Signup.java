@@ -59,9 +59,7 @@ public class Signup extends AppCompatActivity {
         String nama = etNama.getText().toString();
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
-
         User user = new User(nama, email, password);
-
         fb.mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override

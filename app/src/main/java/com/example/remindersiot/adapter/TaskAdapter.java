@@ -82,6 +82,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewHolder> 
                 tugas.add(task.getNote());
                 tugas.add(task.getStart());
                 tugas.add(task.getTitle());
+                tugas.add(task.getIdUrut());
                 Intent intent = new Intent(context, Detail.class);
                 intent.putStringArrayListExtra("tugas", (ArrayList<String>) tugas);
                 context.startActivity(intent);
