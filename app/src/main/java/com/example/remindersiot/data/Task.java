@@ -40,6 +40,7 @@ public class Task {
         this.due = due;
     }
 
+
     public String getNote() {
         return note;
     }

@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import android.view.View;
@@ -69,6 +70,11 @@ public class Signup extends AppCompatActivity {
                             fb.database.getReference("User").child(fb.mAuth.getCurrentUser().getUid()).child("Akun").setValue(user);
                             fb.database.getReference("User").child(fb.mAuth.getCurrentUser().getUid()).child("Course").child("0").setValue("Course List");
                             fb.database.getReference("User").child(fb.mAuth.getCurrentUser().getUid()).child("Device").child("status").setValue("disconnected");
+
+                            SharedPreferences.Editor editor = getSharedPreferences("iterasiTask", MODE_PRIVATE).edit();
+                            editor.putInt("iterasiKe", 1);
+                            editor.apply();
+
                             startActivity(new Intent(Signup.this, Home.class));
                             finish();
                             Toast.makeText(Signup.this, "Authentication Succes", Toast.LENGTH_LONG).show();

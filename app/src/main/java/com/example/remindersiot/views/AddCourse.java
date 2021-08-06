@@ -58,17 +58,22 @@ public class AddCourse extends AppCompatActivity {
         fb.mDatabaseRef.child(fb.mAuth.getUid()).child("Course").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-              long w = snapshot.getChildrenCount();
-                fb.database.getReference("User").child(fb.mAuth.getUid()).child("Course").child(String.valueOf(w)).setValue(course);
-            }
+                if(course.equals("")){
+                    Toast.makeText(AddCourse.this, "This input not null", Toast.LENGTH_LONG).show();
 
+                } else {
+                    long w = snapshot.getChildrenCount();
+                    fb.database.getReference("User").child(fb.mAuth.getUid()).child("Course").child(String.valueOf(w)).setValue(course);
+                    etCourse.setText("");
+                    Toast.makeText(AddCourse.this, "Succes add course" , Toast.LENGTH_SHORT).show();
+                }
+                }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
-        etCourse.setText("");
-        Toast.makeText(AddCourse.this, "Succes add course" , Toast.LENGTH_SHORT).show();
+
     }
 
 

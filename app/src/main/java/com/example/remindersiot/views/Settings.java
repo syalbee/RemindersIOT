@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.remindersiot.R;
 import com.example.remindersiot.database.FirebaseInit;
@@ -34,10 +35,15 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String macaddress = etMac.getText().toString();
-                fb.database.getReference("User").child(fb.mAuth.getCurrentUser().getUid()).child("Device").child("macaddress").setValue(macaddress);
-                fb.database.getReference("User").child(fb.mAuth.getCurrentUser().getUid()).child("Device").child("status").setValue("connected");
-                fb.database.getReference("Device").child(macaddress).child("uid").setValue(fb.mAuth.getUid());
+                if(macaddress.equals("")){
+                    Toast.makeText(Settings.this, "This input not null", Toast.LENGTH_LONG).show();
 
+                } else {
+
+                    fb.database.getReference("User").child(fb.mAuth.getCurrentUser().getUid()).child("Device").child("macaddress").setValue(macaddress);
+                    fb.database.getReference("User").child(fb.mAuth.getCurrentUser().getUid()).child("Device").child("status").setValue("connected");
+                    fb.database.getReference("Device").child(macaddress).child("uid").setValue(fb.mAuth.getUid());
+                }
             }
         });
         btnBack.setOnClickListener(new View.OnClickListener() {

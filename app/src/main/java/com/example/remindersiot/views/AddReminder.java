@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -145,6 +147,10 @@ public class AddReminder extends AppCompatActivity {
     }
 
     private void pushTask(){
+        SharedPreferences.Editor editor = getSharedPreferences("iterasiTask", MODE_PRIVATE).edit();
+        SharedPreferences prefs = getSharedPreferences("iterasiTask", MODE_PRIVATE);
+        int Iterasisekian = prefs.getInt("iterasiKe", 0); //0 is the default value.
+
         String uid = fb.mAuth.getCurrentUser().getUid();
         String title = etTitle.getText().toString();
         String course = etCourse.getSelectedItem().toString();
@@ -153,12 +159,25 @@ public class AddReminder extends AppCompatActivity {
         String note = etNote.getText().toString();
         String idKey = fb.mDatabaseRef.push().getKey();
 
-        Tasks tks = new Tasks(title, course, start, due,note, idKey);
+        if(title.equals("") || course.equals("") ||start.equals("") ||due.equals("") ||note.equals("") ){
+            Toast.makeText(AddReminder.this, "This input not null", Toast.LENGTH_LONG).show();
+
+        } else {
+
+            Tasks tks = new Tasks(title, course, start, due, note, idKey);
+            fb.database.getReference("User").child(uid).child("Task").child(idKey).setValue(tks);
+            fb.database.getReference("User").child(uid).child("TaskDevice").child(String.valueOf(Iterasisekian)).setValue(tks);
+            fb.database.getReference("User").child(uid).child("TaskDevice").child("jumlahIterasi").setValue(Iterasisekian);
+            Toast.makeText(AddReminder.this, "Add Task Succes", Toast.LENGTH_LONG).show();
+
+            editor.putInt("iterasiKe", Iterasisekian + 1);
+            editor.apply();
+        }
         etTitle.setText("");
         etStart.setText("");
         etDue.setText("");
         etNote.setText("");
-        fb.database.getReference("User").child(uid).child("Task").child(idKey).setValue(tks);
-        Toast.makeText(AddReminder.this, "Add Task Succes", Toast.LENGTH_LONG).show();
     }
+
+
 }
